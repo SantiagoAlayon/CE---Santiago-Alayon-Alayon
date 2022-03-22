@@ -1,0 +1,791 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "name": "Entrega 2  CE",
+      "provenance": [],
+      "authorship_tag": "ABX9TyOlafJaZQXatSnSZbXf4PQb",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/SantiagoAlayon/Computacion-Estadistica---Santiago-Alayon-Alayon/blob/main/Entrega_2_CE.pdf\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "1. Lleve a codigo funcional las funciones\n"
+      ],
+      "metadata": {
+        "id": "2ToIBt3z1rl1"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "$$ y1 = log(x) $$\n"
+      ],
+      "metadata": {
+        "id": "7VMbBCEY2Aoi"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Condiciones\n",
+        "\n",
+        "1. x>0 \n",
+        "2. x≠0\n"
+      ],
+      "metadata": {
+        "id": "WPs7xBc6T8iC"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "from math import log\n",
+        "\n",
+        "\n",
+        "x=float(input('Ingrese x: '))\n",
+        "\n",
+        "if (x<=0):\n",
+        "  print('Fuera del dominio de de la funcion')\n",
+        "else:\n",
+        "  z = log(x)\n",
+        "  print(f'y1 es: {z}')\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "aMMORhiW1o7v",
+        "outputId": "df8e0992-3c79-4b8a-ced7-7752f8414e4d"
+      },
+      "execution_count": 40,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Ingrese x: 589\n",
+            "y1 es: 6.3784261836515865\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "$$ y2 = log(\\sqrt{x}) $$\n",
+        "\n"
+      ],
+      "metadata": {
+        "id": "MXdmYDxN4ZUa"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Condiciones\n",
+        "\n",
+        "1. x>0 \n",
+        "2. x≠0"
+      ],
+      "metadata": {
+        "id": "68MaDgxUUOx4"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "from math import log\n",
+        "from math import sqrt\n",
+        "\n",
+        "x=float(input('Ingrese x: '))\n",
+        "\n",
+        "if (x<=0):\n",
+        "  print('Fuera del dominio de de la funcion')\n",
+        "else:\n",
+        "  z = log(sqrt(x))\n",
+        "  print(f'y2 es: {z}')"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "BXPIxMJ_Btvw",
+        "outputId": "225d09b1-bd15-4208-8d36-43acfb607e03"
+      },
+      "execution_count": 32,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Ingrese x: 16\n",
+            "y2 es: 1.3862943611198906\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "$$ y3 = log (\\sqrt{(x^{2}-1)}) $$\n"
+      ],
+      "metadata": {
+        "id": "P7c0hYE2DLKN"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Condiciones\n",
+        "\n",
+        "1. x>1\n",
+        "2. x≠1"
+      ],
+      "metadata": {
+        "id": "SUZrFOv5Uc2i"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "from math import log\n",
+        "from math import sqrt\n",
+        "\n",
+        "x=float(input('Ingrese x: '))\n",
+        "\n",
+        "if (x<=1):\n",
+        "  print('Fuera del dominio de de la funcion')\n",
+        "else:\n",
+        "  z = log (sqrt((x**2)-1))\n",
+        "  print(f'y3 es: {z}')"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "7mZUWa0MD2ly",
+        "outputId": "0d20829a-610b-469e-eb69-ada56a38b0e1"
+      },
+      "execution_count": 72,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Ingrese x: 1\n",
+            "Fuera del dominio de de la funcion\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "$$ y4= \\frac{log(\\sqrt{x-1})}{x^{2}+1} $$\n"
+      ],
+      "metadata": {
+        "id": "CguA5aEhG4N9"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Condiciones\n",
+        "\n",
+        "1. x>1 \n",
+        "2. x≠1"
+      ],
+      "metadata": {
+        "id": "HhmIWH1-Uy-F"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "from math import log\n",
+        "from math import sqrt \n",
+        "\n",
+        "x = float(input('Ingrese x: '))\n",
+        "if x<=1:\n",
+        "  print('Fuera del dominio de la funcion')\n",
+        "else:\n",
+        "  z = log (sqrt(x-1)) / (x**2 +1)\n",
+        "  print(f'y4 es: {z}')"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "QWbfZK27H8JV",
+        "outputId": "15ede35d-3511-4b45-b7ab-4d9f10bc6025"
+      },
+      "execution_count": 60,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Ingrese x: 10\n",
+            "y4 es: 0.010877349392753562\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "$$ y5=\\frac{x-1}{log(x)} $$"
+      ],
+      "metadata": {
+        "id": "ijcU3V_8OdpH"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Condiciones\n",
+        "\n",
+        "1. x>0 \n",
+        "2. x≠0\n",
+        "3. x≠1\n"
+      ],
+      "metadata": {
+        "id": "8NL59JTnU8MY"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "from math import log\n",
+        "from math import sqrt\n",
+        "\n",
+        "x = float(input('Ingrese x: '))\n",
+        "if x<=0 or x==1:\n",
+        "  print('Fuera del dominio de la funcion')\n",
+        "else:\n",
+        "  z = (x-1) / log(x)\n",
+        "  print(f'y5 es: {z}')"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "fb_bRNJjOv4r",
+        "outputId": "e6324cb0-845e-41cc-b563-7e5ca2846918"
+      },
+      "execution_count": 75,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Ingrese x: 0.5\n",
+            "y5 es: 0.7213475204444817\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "$$ y6= \\frac{1}{x} + \\sqrt{x-1}  $$\n"
+      ],
+      "metadata": {
+        "id": "Kbw2NCJJP0Wd"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Condiciones\n",
+        "\n",
+        "1. x>1 \n"
+      ],
+      "metadata": {
+        "id": "sljMmLptVj-M"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "from math import sqrt\n",
+        "\n",
+        "x = float(input('Ingrese x: '))\n",
+        "if x<1:\n",
+        "  print('Fuera del dominio de la funcion')\n",
+        "else:\n",
+        "  z = 1/x + sqrt(x-1)\n",
+        "  print(f'y6 es: {z}')"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "v6pNh3UvQG6D",
+        "outputId": "ed86ed80-3930-467e-c7cd-60bab6a79dfe"
+      },
+      "execution_count": 80,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Ingrese x: 5\n",
+            "y6 es: 2.2\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "$$ y7 = \\frac{1}{x} + \\sqrt{x-1} - (\\frac{1}{log(\\frac{1}{x+1})}) $$"
+      ],
+      "metadata": {
+        "id": "WaELYUBNR5iE"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Condiciones\n",
+        "\n",
+        "2. x>1\n"
+      ],
+      "metadata": {
+        "id": "XwSI5EBOXrwZ"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "from math import sqrt\n",
+        "from math import log\n",
+        "\n",
+        "x = float(input('Ingrese x: '))\n",
+        "if x<1:\n",
+        "  print('Fuera del dominio de la funcion')\n",
+        "else:\n",
+        "  z = (1/x) + (sqrt(x-1)) + (1/log(1/(x+1)))\n",
+        "  print(f'y7 es: {z}')"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "57Py2IK2ZQLK",
+        "outputId": "719ef05e-5d05-4269-b960-e4f76a4839c6"
+      },
+      "execution_count": 81,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Ingrese x: 0\n",
+            "Fuera del dominio de la funcion\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "$$ y8 = \\frac{2}{x^{2} +1 } $$\n"
+      ],
+      "metadata": {
+        "id": "mMhWFwc8aweR"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Condiciones \n",
+        "\n",
+        "Ninguna\n"
+      ],
+      "metadata": {
+        "id": "zv6iwF8aa9uh"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "\n",
+        "x = float(input('Ingrese x: '))\n",
+        "\n",
+        "z = 2 / ((x**2)+1)\n",
+        "print(f'y8 es: {z}')"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "JJi0iJOCbbfP",
+        "outputId": "9bdfc7ae-2540-4f4e-df73-c05be64f4467"
+      },
+      "execution_count": 144,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Ingrese x: 5\n",
+            "y8 es: 0.07692307692307693\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "$$ y9 = \\frac{1}{n} \\sum_{i=1}^{n} x_{i} $$\n"
+      ],
+      "metadata": {
+        "id": "2zIcp4aVeDqV"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "x= float(input(\"Ingrese x : \"))\n",
+        "n=int(input(\"Ingrese n : \"))\n",
+        "\n",
+        "if n >= 1:\n",
+        "  summatory = []\n",
+        "  for i in range(n):\n",
+        "    summatory.append(x)\n",
+        "    z =(1/n)*(sum(summatory))\n",
+        "    print( f'y9 es:{z}')\n",
+        "  else: \n",
+        "    print(\"No se puede realizar la funcion con un n menor a 1\")\n",
+        "\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "MZWA6QmVe68y",
+        "outputId": "fea8116c-72b6-43ff-bb7a-b4cd41068747"
+      },
+      "execution_count": 182,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Ingrese x : 7\n",
+            "Ingrese n : 2\n",
+            "y9 es:3.5\n",
+            "y9 es:7.0\n",
+            "No se puede realizar la funcion con un n menor a 1\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "$$ y10 = \\frac{1}{n-1} \\sum_{i=1}^{n}(x_{i} - \\bar{x})^{2} $$\n"
+      ],
+      "metadata": {
+        "id": "VUPF6CfVay1y"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "x= float(input(\"Ingrese x \"))\n",
+        "n=int(input(\"Ingrese n \"))\n",
+        "if n >= 1:\n",
+        "  summatory = []\n",
+        "  for i in range(n):\n",
+        "    summatory.append((x-(x/n))**2)\n",
+        "    z=(1/(n-1))*(sum(summatory))\n",
+        "    print( f'y10 es:{z}')\n",
+        "  else: \n",
+        "    print(\"No se puede realizar la funcion con un n menor a 1\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "IaDdB8Y4a3gg",
+        "outputId": "6b8e3377-fe7a-46c4-ad7d-21414106ceb9"
+      },
+      "execution_count": 191,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Ingrese x 7\n",
+            "Ingrese n 8\n",
+            "y10 es:5.359375\n",
+            "y10 es:10.71875\n",
+            "y10 es:16.078125\n",
+            "y10 es:21.4375\n",
+            "y10 es:26.796875\n",
+            "y10 es:32.15625\n",
+            "y10 es:37.515625\n",
+            "y10 es:42.875\n",
+            "No se puede realizar la funcion con un n menor a 1\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "$$ y11=\\frac{\\sqrt{y10}}{y9} $$"
+      ],
+      "metadata": {
+        "id": "kLluq2ssdWfj"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "x= float(input(\"Ingrese x : \"))\n",
+        "n=int(input(\"Ingrese n : \"))\n",
+        "\n",
+        "if n >= 1:\n",
+        "  summatory = []\n",
+        "  for i in range(n):\n",
+        "    summatory.append(x)\n",
+        "    y9 =(1/n)*(sum(summatory))\n",
+        "    print( f'y9 es:{y9}')\n",
+        "  else: \n",
+        "    print(\"No se puede realizar la funcion con un n menor a 1\")\n",
+        "\n",
+        "x= float(input(\"Ingrese x \"))\n",
+        "n=int(input(\"Ingrese n \"))\n",
+        "if n >= 1:\n",
+        "  summatory = []\n",
+        "  for i in range(n):\n",
+        "    summatory.append((x-(x/n))**2)\n",
+        "    y10=(1/(n-1))*(sum(summatory))\n",
+        "    print( f'y10 es:{y10}')\n",
+        "  else: \n",
+        "    print(\"No se puede realizar la funcion con un n menor a 1\")\n",
+        "\n",
+        "z=(y10**1/2)/(y9)\n",
+        "\n",
+        "print(f'y11 es:{z}')"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "Zij4mrYKdlLy",
+        "outputId": "92eacb6a-e3c0-4dba-9572-36316cc59c0b"
+      },
+      "execution_count": 197,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Ingrese x : 5\n",
+            "Ingrese n : 8\n",
+            "y9 es:0.625\n",
+            "y9 es:1.25\n",
+            "y9 es:1.875\n",
+            "y9 es:2.5\n",
+            "y9 es:3.125\n",
+            "y9 es:3.75\n",
+            "y9 es:4.375\n",
+            "y9 es:5.0\n",
+            "No se puede realizar la funcion con un n menor a 1\n",
+            "Ingrese x 7\n",
+            "Ingrese n 8\n",
+            "y10 es:5.359375\n",
+            "y10 es:10.71875\n",
+            "y10 es:16.078125\n",
+            "y10 es:21.4375\n",
+            "y10 es:26.796875\n",
+            "y10 es:32.15625\n",
+            "y10 es:37.515625\n",
+            "y10 es:42.875\n",
+            "No se puede realizar la funcion con un n menor a 1\n",
+            "y11 es:4.2875\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "## Construya una funcion que returne la varianza de un conjunto de datos (n ≥ 2) cuando se va incorporando dato a dato. Use como primer par de datos los que se generan de la distribuci ́on normal con μ = 3 y s = 0,3.Use la misma semilla y los mismos parametros de la distribucion para incorporar cada dato. Haga el proceso  50 veces y luego grafique la varianza como funcion de n."
+      ],
+      "metadata": {
+        "id": "GfmH35Wshj2O"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def variance(n):\n",
+        "  random.seed(123)\n",
+        "  if n < 2: \n",
+        "    return f'El conjunto de datos debe tener 2 o más datos'\n",
+        "  else:\n",
+        "      var=np.random.normal(3,0.3,2)\n",
+        "      list_var=[var[0],var[1]]\n",
+        "      list_g=np.random.normal(3,0.3,n)\n",
+        "      for i in range (n):\n",
+        "        list_var.append(list_g[i])\n",
+        "        print(f'La varianza es {round(np.var(list_var),4)},cuando n es {i+1}')\n",
+        "\n",
+        "variance(50)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 321
+        },
+        "id": "8c6fkJEhPPGE",
+        "outputId": "5a1e68f8-c836-4b84-fc79-4fe4f7b4f577"
+      },
+      "execution_count": 199,
+      "outputs": [
+        {
+          "output_type": "error",
+          "ename": "NameError",
+          "evalue": "ignored",
+          "traceback": [
+            "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
+            "\u001b[0;31mNameError\u001b[0m                                 Traceback (most recent call last)",
+            "\u001b[0;32m<ipython-input-199-a19bafd0c862>\u001b[0m in \u001b[0;36m<module>\u001b[0;34m()\u001b[0m\n\u001b[1;32m     11\u001b[0m         \u001b[0mprint\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34mf'La varianza es {round(np.var(list_var),4)},cuando n es {i+1}'\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m     12\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m---> 13\u001b[0;31m \u001b[0mvariance\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;36m50\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m",
+            "\u001b[0;32m<ipython-input-199-a19bafd0c862>\u001b[0m in \u001b[0;36mvariance\u001b[0;34m(n)\u001b[0m\n\u001b[1;32m      1\u001b[0m \u001b[0;32mdef\u001b[0m \u001b[0mvariance\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mn\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m----> 2\u001b[0;31m   \u001b[0mrandom\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mseed\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;36m123\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m      3\u001b[0m   \u001b[0;32mif\u001b[0m \u001b[0mn\u001b[0m \u001b[0;34m<\u001b[0m \u001b[0;36m2\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m      4\u001b[0m     \u001b[0;32mreturn\u001b[0m \u001b[0;34mf'El conjunto de datos debe tener 2 o más datos'\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m      5\u001b[0m   \u001b[0;32melse\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;31mNameError\u001b[0m: name 'random' is not defined"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "## La cantidad de radiacion absorbida puede medirse por la transmitancia. La relacion entre transmitancia (T) y absorbancia (A) esta dada por la ley Beer-Lambert (ley de Beer). Cree una funcion para la expresion que aparece en https://www.electrical4u.com/what−is−transmittance/ y genere unos datos de T para determinar A. Grafique la funcion. Finalmente lea la seccion titulada: ✭✭Why is Absorbance the Preferred Unit Over Transmittance?✮✮ (buscar el link desde el buscador)##\n",
+        "\n"
+      ],
+      "metadata": {
+        "id": "z57bbSw4hqH5"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "FUNCION PARA LA LEY DE BEER-LAMBERT (LEY DE BEER)\n"
+      ],
+      "metadata": {
+        "id": "gb79vJ-2svyt"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "from math import log10\n",
+        "\n",
+        "porcentaje_de_T = float(input('Ingrese porcentaje_de_T: '))\n",
+        "\n",
+        "z = 2 - (log10(porcentaje_de_T))\n",
+        "\n",
+        "print(f'A es: {z}')"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "LJZ7eyRenzNl",
+        "outputId": "52ffd3c5-de2d-4cc6-e284-05ee837262d5"
+      },
+      "execution_count": 143,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Ingrese porcentaje_de_T: 100\n",
+            "A es: 0.0\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "GRAFICA DE TRANSMITANCIA Y ABSORBANCIA\n"
+      ],
+      "metadata": {
+        "id": "cEwyzd1Zs61D"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Con los porcentajes de transmitancias teoricas de  1%,25%,50%,75%,100% se calculan las respectivas absorbancias y se grafican\n",
+        "\n"
+      ],
+      "metadata": {
+        "id": "pXgPXRsOt_vw"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import matplotlib.pyplot as plt\n",
+        "x=[1,25,50,75,100]\n",
+        "y=[ 2,0.6020599913279623,0.30102999566398125,0.1249387366082999,0]\n",
+        "plt.plot(x,y)\n",
+        "plt.xlabel('% de transmitancia')\n",
+        "plt.ylabel('Absorbancia')\n",
+        "plt.show()\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 279
+        },
+        "id": "LM09CiujtFVr",
+        "outputId": "b8f10ce4-547c-494e-f32c-10cedb729377"
+      },
+      "execution_count": 134,
+      "outputs": [
+        {
+          "output_type": "display_data",
+          "data": {
+            "text/plain": [
+              "<Figure size 432x288 with 1 Axes>"
+            ],
+            "image/png": "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\n"
+          },
+          "metadata": {
+            "needs_background": "light"
+          }
+        }
+      ]
+    }
+  ]
+}

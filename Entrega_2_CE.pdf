@@ -5,7 +5,9 @@
     "colab": {
       "name": "Entrega 2  CE",
       "provenance": [],
-      "authorship_tag": "ABX9TyOlafJaZQXatSnSZbXf4PQb",
+      "collapsed_sections": [],
+      "mount_file_id": "1Y4xiKSMHhdMLReAtC6FRugB_zBm3rI25",
+      "authorship_tag": "ABX9TyO20eQ5yFBzN6QqerKkhNsa",
       "include_colab_link": true
     },
     "kernelspec": {
@@ -73,7 +75,8 @@
       ],
       "metadata": {
         "colab": {
-          "base_uri": "https://localhost:8080/"
+          "base_uri": "https://localhost:8080/",
+          "height": 0
         },
         "id": "aMMORhiW1o7v",
         "outputId": "df8e0992-3c79-4b8a-ced7-7752f8414e4d"
@@ -128,7 +131,8 @@
       ],
       "metadata": {
         "colab": {
-          "base_uri": "https://localhost:8080/"
+          "base_uri": "https://localhost:8080/",
+          "height": 0
         },
         "id": "BXPIxMJ_Btvw",
         "outputId": "225d09b1-bd15-4208-8d36-43acfb607e03"
@@ -182,7 +186,8 @@
       ],
       "metadata": {
         "colab": {
-          "base_uri": "https://localhost:8080/"
+          "base_uri": "https://localhost:8080/",
+          "height": 0
         },
         "id": "7mZUWa0MD2ly",
         "outputId": "0d20829a-610b-469e-eb69-ada56a38b0e1"
@@ -235,7 +240,8 @@
       ],
       "metadata": {
         "colab": {
-          "base_uri": "https://localhost:8080/"
+          "base_uri": "https://localhost:8080/",
+          "height": 0
         },
         "id": "QWbfZK27H8JV",
         "outputId": "15ede35d-3511-4b45-b7ab-4d9f10bc6025"
@@ -289,7 +295,8 @@
       ],
       "metadata": {
         "colab": {
-          "base_uri": "https://localhost:8080/"
+          "base_uri": "https://localhost:8080/",
+          "height": 0
         },
         "id": "fb_bRNJjOv4r",
         "outputId": "e6324cb0-845e-41cc-b563-7e5ca2846918"
@@ -340,7 +347,8 @@
       ],
       "metadata": {
         "colab": {
-          "base_uri": "https://localhost:8080/"
+          "base_uri": "https://localhost:8080/",
+          "height": 0
         },
         "id": "v6pNh3UvQG6D",
         "outputId": "ed86ed80-3930-467e-c7cd-60bab6a79dfe"
@@ -392,7 +400,8 @@
       ],
       "metadata": {
         "colab": {
-          "base_uri": "https://localhost:8080/"
+          "base_uri": "https://localhost:8080/",
+          "height": 0
         },
         "id": "57Py2IK2ZQLK",
         "outputId": "719ef05e-5d05-4269-b960-e4f76a4839c6"
@@ -440,7 +449,8 @@
       ],
       "metadata": {
         "colab": {
-          "base_uri": "https://localhost:8080/"
+          "base_uri": "https://localhost:8080/",
+          "height": 0
         },
         "id": "JJi0iJOCbbfP",
         "outputId": "9bdfc7ae-2540-4f4e-df73-c05be64f4467"
@@ -484,7 +494,8 @@
       ],
       "metadata": {
         "colab": {
-          "base_uri": "https://localhost:8080/"
+          "base_uri": "https://localhost:8080/",
+          "height": 0
         },
         "id": "MZWA6QmVe68y",
         "outputId": "fea8116c-72b6-43ff-bb7a-b4cd41068747"
@@ -529,7 +540,8 @@
       ],
       "metadata": {
         "colab": {
-          "base_uri": "https://localhost:8080/"
+          "base_uri": "https://localhost:8080/",
+          "height": 0
         },
         "id": "IaDdB8Y4a3gg",
         "outputId": "6b8e3377-fe7a-46c4-ad7d-21414106ceb9"
@@ -596,7 +608,8 @@
       ],
       "metadata": {
         "colab": {
-          "base_uri": "https://localhost:8080/"
+          "base_uri": "https://localhost:8080/",
+          "height": 0
         },
         "id": "Zij4mrYKdlLy",
         "outputId": "92eacb6a-e3c0-4dba-9572-36316cc59c0b"
@@ -685,6 +698,18 @@
       ]
     },
     {
+      "cell_type": "code",
+      "source": [
+        "from google.colab import drive\n",
+        "drive.mount('/content/drive')"
+      ],
+      "metadata": {
+        "id": "XYxQwoU6hEb9"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
       "cell_type": "markdown",
       "source": [
         "## La cantidad de radiacion absorbida puede medirse por la transmitancia. La relacion entre transmitancia (T) y absorbancia (A) esta dada por la ley Beer-Lambert (ley de Beer). Cree una funcion para la expresion que aparece en https://www.electrical4u.com/what−is−transmittance/ y genere unos datos de T para determinar A. Grafique la funcion. Finalmente lea la seccion titulada: ✭✭Why is Absorbance the Preferred Unit Over Transmittance?✮✮ (buscar el link desde el buscador)##\n",
@@ -716,7 +741,8 @@
       ],
       "metadata": {
         "colab": {
-          "base_uri": "https://localhost:8080/"
+          "base_uri": "https://localhost:8080/",
+          "height": 0
         },
         "id": "LJZ7eyRenzNl",
         "outputId": "52ffd3c5-de2d-4cc6-e284-05ee837262d5"

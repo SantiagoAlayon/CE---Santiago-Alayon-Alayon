@@ -1,0 +1,586 @@
+---
+title: "CE - Entrega 3 pdf"
+author: "Santiago Alayon"
+date: "21/3/2022"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(dplyr) # Librería dplyr -> MUY IMPORTANTE
+library(readxl)
+library(ggplot2)
+library(Hmisc) # Utilización función CUT2
+install.packages("Rcpp")
+```
+
+## Datos ##
+
+```{r}
+
+DATOS <- read_excel("XPABLO (2).xlsx")
+View(DATOS)
+DATOS <- DATOS[-c(16,17,18,19)]
+View(DATOS)
+
+```
+
+## Variables independientes ##
+
+```{r}
+MO <- cut(x = DATOS$MO, breaks = 4) # cut -> Función para crear categorías
+unique(MO)
+ggplot(DATOS, aes(x = Long, y = Lat, color = MO)) + #Aesthetic
+  geom_point()
+```
+
+```{r}
+Ca <- cut(x = DATOS$Ca, breaks = 5) # cut -> Función para crear categorías
+unique(Ca)
+
+ggplot(DATOS, aes(x = Long, y = Lat, color = Ca)) + #Aesthetic
+  geom_point()
+```
+
+```{r}
+Mg <- cut(x = DATOS$Mg, breaks = 5) # cut -> Función para crear categorías
+unique(Mg)
+
+ggplot(DATOS, aes(x = Long, y = Lat, color = Mg)) + #Aesthetic
+  geom_point()
+```
+
+
+```{r}
+K <- cut(x = DATOS$K, breaks = 5) # cut -> Función para crear categorías
+unique(K)
+
+ggplot(DATOS, aes(x = Long, y = Lat, color = K)) + #Aesthetic
+  geom_point()
+```
+
+
+```{r}
+Na <- cut(x = DATOS$Na, breaks = 5) # cut -> Función para crear categorías
+unique(Na)
+
+ggplot(DATOS, aes(x = Long, y = Lat, color = Na)) + #Aesthetic
+  geom_point()
+```
+
+```{r}
+CICE <- cut(x = DATOS$CICE, breaks = 5) # cut -> Función para crear categorías
+unique(CICE)
+
+ggplot(DATOS, aes(x = Long, y = Lat, color = CICE)) + #Aesthetic
+  geom_point()
+```
+
+
+```{r}
+CE <- cut(x = DATOS$CE, breaks = 5) # cut -> Función para crear categorías
+unique(CE)
+
+ggplot(DATOS, aes(x = Long, y = Lat, color = CE)) + #Aesthetic
+  geom_point()
+```
+
+```{r}
+Fe <- cut(x = DATOS$Fe, breaks = 5) # cut -> Función para crear categorías
+unique(Fe)
+
+ggplot(DATOS, aes(x = Long, y = Lat, color = Fe)) + #Aesthetic
+  geom_point()
+```
+
+```{r}
+Cu <- cut(x = DATOS$Cu, breaks = 5) # cut -> Función para crear categorías
+unique(Cu)
+
+ggplot(DATOS, aes(x = Long, y = Lat, color = Cu)) + #Aesthetic
+  geom_point()
+```
+
+```{r}
+Zn <- cut(x = DATOS$Zn, breaks = 5) # cut -> Función para crear categorías
+unique(Zn)
+
+ggplot(DATOS, aes(x = Long, y = Lat, color = Zn)) + #Aesthetic
+  geom_point()
+```
+
+
+```{r}
+cos <- cut(x = DATOS$cos, breaks = 5) # cut -> Función para crear categorías
+unique(cos)
+
+ggplot(DATOS, aes(x = Long, y = Lat, color = cos)) + #Aesthetic
+  geom_point()
+```
+  
+```{r}
+MO_Ca = DATOS$MO/DATOS$Ca
+rel = cut(MO_Ca, breaks = 8)
+unique(rel)
+
+ggplot(DATOS, aes(Long, Lat, color = rel))+
+  geom_point()
+```  
+  
+```{r}
+MO_Mg = DATOS$MO/DATOS$Mg
+rel = cut(MO_Mg, breaks = 8)
+unique(MO_Mg)
+
+ggplot(DATOS, aes(Long, Lat, color = MO_Mg))+
+  geom_point()
+```  
+  
+```{r}
+MO_K = DATOS$MO/DATOS$K
+rel = cut(MO_K, breaks = 8)
+unique(MO_K)
+
+ggplot(DATOS, aes(Long, Lat, color = MO_K))+
+  geom_point()
+```    
+  
+```{r}
+MO_Na= DATOS$MO/DATOS$Na
+rel = cut(MO_Na, breaks = 8)
+unique(MO_Na)
+
+ggplot(DATOS, aes(Long, Lat, color = MO_Na))+
+  geom_point()
+```    
+  
+```{r}
+MO_CICE= DATOS$MO/DATOS$CICE
+rel = cut(MO_CICE, breaks = 8)
+unique(MO_CICE)
+
+ggplot(DATOS, aes(Long, Lat, color = MO_CICE))+
+  geom_point()
+```   
+  
+```{r}
+MO_CE= DATOS$MO/DATOS$CE
+rel = cut(MO_CE, breaks = 8)
+unique(MO_CE)
+
+ggplot(DATOS, aes(Long, Lat, color = MO_CE))+
+  geom_point()
+```     
+```{r}
+MO_Fe= DATOS$MO/DATOS$Fe
+rel = cut(MO_Fe, breaks = 8)
+unique(MO_Fe)
+
+ggplot(DATOS, aes(Long, Lat, color = MO_Fe))+
+  geom_point()
+```       
+```{r}
+MO_Cu= DATOS$MO/DATOS$Cu
+rel = cut(MO_Cu, breaks = 8)
+unique(MO_Cu)
+
+ggplot(DATOS, aes(Long, Lat, color = MO_Cu))+
+  geom_point()
+```     
+```{r}
+MO_Zn= DATOS$MO/DATOS$Zn
+rel = cut(MO_Zn, breaks = 8)
+unique(MO_Zn)
+
+ggplot(DATOS, aes(Long, Lat, color = MO_Zn))+
+  geom_point()
+```   
+```{r}
+Ca_Mg= DATOS$Ca/DATOS$Mg
+rel = cut(Ca_Mg, breaks = 8)
+unique(Ca_Mg)
+
+ggplot(DATOS, aes(Long, Lat, color = Ca_Mg))+
+  geom_point()
+```   
+  
+```{r}
+Ca_K= DATOS$Ca/DATOS$K
+rel = cut(Ca_K, breaks = 8)
+unique(Ca_K)
+
+ggplot(DATOS, aes(Long, Lat, color = Ca_K))+
+  geom_point()
+```     
+  
+```{r}
+Ca_Na= DATOS$Ca/DATOS$Na
+rel = cut(Ca_Na, breaks = 8)
+unique(Ca_Na)
+
+ggplot(DATOS, aes(Long, Lat, color = Ca_Na))+
+  geom_point()
+```  
+  
+```{r}
+Ca_CICE= DATOS$Ca/DATOS$CICE
+rel = cut(Ca_Na, breaks = 8)
+unique(Ca_CICE)
+
+ggplot(DATOS, aes(Long, Lat, color = Ca_CICE))+
+  geom_point()
+```   
+  
+```{r}
+Ca_CE= DATOS$Ca/DATOS$CE
+rel = cut(Ca_CE, breaks = 8)
+unique(Ca_CE)
+
+ggplot(DATOS, aes(Long, Lat, color = Ca_CE))+
+  geom_point()
+```    
+  
+```{r}
+Ca_Fe= DATOS$Ca/DATOS$Fe
+rel = cut(Ca_Fe, breaks = 8)
+unique(Ca_Fe)
+
+ggplot(DATOS, aes(Long, Lat, color = Ca_Fe))+
+  geom_point()
+```   
+```{r}
+Ca_Cu= DATOS$Ca/DATOS$Cu
+rel = cut(Ca_Cu, breaks = 8)
+unique(Ca_Cu)
+
+ggplot(DATOS, aes(Long, Lat, color = Ca_Cu))+
+  geom_point()
+```   
+
+```{r}
+Ca_Zn= DATOS$Ca/DATOS$Zn
+rel = cut(Ca_Zn, breaks = 8)
+unique(Ca_Zn)
+
+ggplot(DATOS, aes(Long, Lat, color = Ca_Zn))+
+  geom_point()
+```   
+```{r}
+Ca_cos= DATOS$Ca/DATOS$cos
+rel = cut(Ca_cos, breaks = 8)
+unique(Ca_cos)
+
+ggplot(DATOS, aes(Long, Lat, color = Ca_cos))+
+  geom_point()
+```   
+
+```{r}
+Mg_K= DATOS$Mg/DATOS$K
+rel = cut(Mg_K, breaks = 8)
+unique(Mg_K)
+
+ggplot(DATOS, aes(Long, Lat, color = Mg_K))+
+  geom_point()
+```   
+```{r}
+Mg_Na= DATOS$Mg/DATOS$Na
+rel = cut(Mg_Na, breaks = 8)
+unique(Mg_Na)
+
+ggplot(DATOS, aes(Long, Lat, color = Mg_Na))+
+  geom_point()
+```   
+
+```{r}
+Mg_CICE= DATOS$Mg/DATOS$CICE
+rel = cut(Mg_CICE, breaks = 8)
+unique(Mg_CICE)
+
+ggplot(DATOS, aes(Long, Lat, color = Mg_CICE))+
+  geom_point()
+```   
+```{r}
+Mg_CE= DATOS$Mg/DATOS$CE
+rel = cut(Mg_CE, breaks = 8)
+unique(Mg_CE)
+
+ggplot(DATOS, aes(Long, Lat, color = Mg_CE))+
+  geom_point()
+```   
+```{r}
+Mg_Fe= DATOS$Mg/DATOS$Fe
+rel = cut(Mg_Fe, breaks = 8)
+unique(Mg_Fe)
+
+ggplot(DATOS, aes(Long, Lat, color = Mg_Fe))+
+  geom_point()
+```   
+```{r}
+Mg_Cu= DATOS$Mg/DATOS$Cu
+rel = cut(Mg_Cu, breaks = 8)
+unique(Mg_Cu)
+
+ggplot(DATOS, aes(Long, Lat, color = Mg_Cu))+
+  geom_point()
+```   
+```{r}
+Mg_Zn= DATOS$Mg/DATOS$Zn
+rel = cut(Mg_Zn, breaks = 8)
+unique(Mg_Zn)
+
+ggplot(DATOS, aes(Long, Lat, color = Mg_Zn))+
+  geom_point()
+```   
+```{r}
+Mg_cos= DATOS$Mg/DATOS$cos
+rel = cut(Mg_cos, breaks = 8)
+unique(Mg_cos)
+
+ggplot(DATOS, aes(Long, Lat, color = Mg_cos))+
+  geom_point()
+```   
+```{r}
+K_Na= DATOS$K/DATOS$Na
+rel = cut(K_Na, breaks = 8)
+unique(K_Na)
+
+ggplot(DATOS, aes(Long, Lat, color = K_Na))+
+  geom_point()
+```   
+```{r}
+K_CICE= DATOS$K/DATOS$CICE
+rel = cut(K_CICE, breaks = 8)
+unique(K_CICE)
+
+ggplot(DATOS, aes(Long, Lat, color = K_CICE))+
+  geom_point()
+```   
+```{r}
+K_CE= DATOS$K/DATOS$CE
+rel = cut(K_CE, breaks = 8)
+unique(K_CE)
+
+ggplot(DATOS, aes(Long, Lat, color = K_CE))+
+  geom_point()
+```   
+```{r}
+K_Fe= DATOS$K/DATOS$Fe
+rel = cut(K_Fe, breaks = 8)
+unique(K_Fe)
+
+ggplot(DATOS, aes(Long, Lat, color = K_Fe))+
+  geom_point()
+```   
+```{r}
+K_Cu= DATOS$K/DATOS$Cu
+rel = cut(K_Cu, breaks = 8)
+unique(K_Cu)
+
+ggplot(DATOS, aes(Long, Lat, color = K_Cu))+
+  geom_point()
+```   
+```{r}
+K_Zn= DATOS$K/DATOS$Zn
+rel = cut(K_Zn, breaks = 8)
+unique(K_Zn)
+
+ggplot(DATOS, aes(Long, Lat, color = K_Zn))+
+  geom_point()
+```   
+```{r}
+K_cos= DATOS$K/DATOS$cos
+rel = cut(K_cos, breaks = 8)
+unique(K_cos)
+
+ggplot(DATOS, aes(Long, Lat, color = K_cos))+
+  geom_point()
+```   
+```{r}
+Na_CICE= DATOS$Na/DATOS$CICE
+rel = cut(Na_CICE, breaks = 8)
+unique(Na_CICE)
+
+ggplot(DATOS, aes(Long, Lat, color = Na_CICE))+
+  geom_point()
+```   
+```{r}
+Na_CE= DATOS$Na/DATOS$CE
+rel = cut(Na_CE, breaks = 8)
+unique(Na_CE)
+
+ggplot(DATOS, aes(Long, Lat, color = Na_CE))+
+  geom_point()
+```
+```{r}
+Na_Fe= DATOS$Na/DATOS$Fe
+rel = cut(Na_Fe, breaks = 8)
+unique(Na_Fe)
+
+ggplot(DATOS, aes(Long, Lat, color = Na_Fe))+
+  geom_point()
+```
+```{r}
+Na_Cu= DATOS$Na/DATOS$Cu
+rel = cut(Na_Cu, breaks = 8)
+unique(Na_Cu)
+
+ggplot(DATOS, aes(Long, Lat, color = Na_Cu))+
+  geom_point()
+```
+```{r}
+Na_Zn= DATOS$Na/DATOS$Zn
+rel = cut(Na_Zn, breaks = 8)
+unique(Na_Zn)
+
+ggplot(DATOS, aes(Long, Lat, color = Na_Zn))+
+  geom_point()
+```
+```{r}
+Na_cos= DATOS$Na/DATOS$cos
+rel = cut(Na_cos, breaks = 8)
+unique(Na_cos)
+
+ggplot(DATOS, aes(Long, Lat, color = Na_cos))+
+  geom_point()
+```
+```{r}
+CICE_CE= DATOS$CICE/DATOS$CE
+rel = cut(CICE_CE, breaks = 8)
+unique(CICE_CE)
+
+ggplot(DATOS, aes(Long, Lat, color = CICE_CE))+
+  geom_point()
+```
+```{r}
+CICE_Fe= DATOS$CICE/DATOS$Fe
+rel = cut(CICE_Fe, breaks = 8)
+unique(CICE_Fe)
+
+ggplot(DATOS, aes(Long, Lat, color = CICE_Fe))+
+  geom_point()
+```
+```{r}
+CICE_Cu= DATOS$CICE/DATOS$Cu
+rel = cut(CICE_Cu, breaks = 8)
+unique(CICE_Cu)
+
+ggplot(DATOS, aes(Long, Lat, color = CICE_Cu))+
+  geom_point()
+```
+```{r}
+CICE_Zn= DATOS$CICE/DATOS$Zn
+rel = cut(CICE_Zn, breaks = 8)
+unique(CICE_Zn)
+
+ggplot(DATOS, aes(Long, Lat, color = CICE_Zn))+
+  geom_point()
+```
+```{r}
+CICE_cos= DATOS$CICE/DATOS$cos
+rel = cut(CICE_cos, breaks = 8)
+unique(CICE_cos)
+
+ggplot(DATOS, aes(Long, Lat, color = CICE_cos))+
+  geom_point()
+```
+```{r}
+CE_Fe= DATOS$CE/DATOS$Fe
+rel = cut(CE_Fe, breaks = 8)
+unique(CE_Fe)
+
+ggplot(DATOS, aes(Long, Lat, color = CE_Fe))+
+  geom_point()
+```
+```{r}
+CE_Cu= DATOS$CE/DATOS$Cu
+rel = cut(CE_Cu, breaks = 8)
+unique(CE_Cu)
+
+ggplot(DATOS, aes(Long, Lat, color = CE_Cu))+
+  geom_point()
+```
+```{r}
+CE_Zn= DATOS$CE/DATOS$Zn
+rel = cut(CE_Zn, breaks = 8)
+unique(CE_Zn)
+
+ggplot(DATOS, aes(Long, Lat, color = CE_Zn))+
+  geom_point()
+```
+```{r}
+CE_cos= DATOS$CE/DATOS$cos
+rel = cut(CE_cos, breaks = 8)
+unique(CE_cos)
+
+ggplot(DATOS, aes(Long, Lat, color = CE_cos))+
+  geom_point()
+```
+```{r}
+Fe_Cu= DATOS$Fe/DATOS$Cu
+rel = cut(Fe_Cu, breaks = 8)
+unique(Fe_Cu)
+
+ggplot(DATOS, aes(Long, Lat, color = Fe_Cu))+
+  geom_point()
+```
+```{r}
+Fe_Zn= DATOS$Fe/DATOS$Zn
+rel = cut(Fe_Zn, breaks = 8)
+unique(Fe_Zn)
+
+ggplot(DATOS, aes(Long, Lat, color = Fe_Zn))+
+  geom_point()
+```
+```{r}
+Fe_cos= DATOS$Fe/DATOS$cos
+rel = cut(Fe_cos, breaks = 8)
+unique(Fe_cos)
+
+ggplot(DATOS, aes(Long, Lat, color = Fe_cos))+
+  geom_point()
+```
+```{r}
+Cu_Zn= DATOS$Cu/DATOS$Zn
+rel = cut(Cu_Zn, breaks = 8)
+unique(Cu_Zn)
+
+ggplot(DATOS, aes(Long, Lat, color = Cu_Zn))+
+  geom_point()
+```
+```{r}
+Cu_cos= DATOS$Cu/DATOS$cos
+rel = cut(Cu_cos, breaks = 8)
+unique(Cu_cos)
+
+ggplot(DATOS, aes(Long, Lat, color = Cu_cos))+
+  geom_point()
+```
+```{r}
+Zn_cos= DATOS$Zn/DATOS$cos
+rel = cut(Zn_cos, breaks = 8)
+unique(Zn_cos)
+
+ggplot(DATOS, aes(Long, Lat, color = Zn_cos))+
+  geom_point()
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,101 @@
+---
+title: "Entrega 5 CE"
+author: "Santiago Alayon"
+date: "7/4/2022"
+output: html_document
+---
+
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+install.packages("ape",repos="https://cloud.r-project.org",quiet=TRUE)
+library(ape)
+library(dplyr)
+library(Hmisc)
+library(readxl)
+```
+ 
+### Datos a analizar ###
+
+
+```{r}
+DATOS <- read_excel("C:/Users/Santiago Alayon/Desktop/Computacinn Estadistica/XPABLO (2).xlsx")
+View(DATOS)
+```
+
+### Matriz de distancia ###
+
+```{r}
+dist_matrix <- as.matrix(dist(cbind(DATOS$Long, DATOS$Lat)))#;dist_matrix
+which.max(dist_matrix) # Es la posición de la máxima
+max(dist_matrix) # Mayor valor 
+min(dist_matrix) # Menor valor
+dim(dist_matrix)
+```
+### Inversa de la distancia ###
+
+```{r}
+dist_matrix_inv <- 1 / dist_matrix # Element wise
+diag(dist_matrix_inv) <- 0
+dist_matrix_inv
+```
+
+
+
+
+### Indices de Moran ###
+
+```{r}
+Moran.I(DATOS$MO, dist_matrix_inv) # p.value < 0.05 <- Dependencia espacial
+```
+```{r}
+Moran.I(DATOS$Ca, dist_matrix_inv) # p.value < 0.05 <- Dependencia espacial
+```
+```{r}
+Moran.I(DATOS$Mg, dist_matrix_inv) # p.value < 0.05 <- Dependencia espacial
+```
+```{r}
+Moran.I(DATOS$K, dist_matrix_inv) # p.value < 0.05 <- Dependencia espacial
+```
+```{r}
+Moran.I(DATOS$Na, dist_matrix_inv) # p.value < 0.05 <- Dependencia espacial
+```
+```{r}
+Moran.I(DATOS$CICE, dist_matrix_inv) # p.value < 0.05 <- Dependencia espacial
+```
+```{r}
+Moran.I(DATOS$CE, dist_matrix_inv) # p.value < 0.05 <- Dependencia espacial
+```
+```{r}
+Moran.I(DATOS$Fe, dist_matrix_inv) # p.value < 0.05 <- Dependencia espacial
+```
+```{r}
+Moran.I(DATOS$Cu, dist_matrix_inv) # p.value < 0.05 <- Dependencia espacial
+```
+```{r}
+Moran.I(DATOS$Zn, dist_matrix_inv) # p.value < 0.05 <- Dependencia espacial
+```
+```{r}
+Moran.I(DATOS$cos, dist_matrix_inv) # p.value < 0.05 <- Dependencia espacial
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
